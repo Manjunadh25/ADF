@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "databricksdf9"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureDatabrickslink_properties_typeProperties_existingClusterId": {
+			"value": "0328-134759-mqbs15q9"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sql-server9.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "ADFdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "ADF"
+		},
+		"dbpraticelink_properties_typeProperties_url": {
+			"value": "https://dbpratice.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
