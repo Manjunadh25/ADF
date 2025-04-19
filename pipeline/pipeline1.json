@@ -1,0 +1,86 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "initnb",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/manjunadh2509@gmail.com/practice/ADF/initial",
+					"baseParameters": {
+						"df_name": {
+							"value": "@pipeline().DataFactory",
+							"type": "Expression"
+						},
+						"v_name": {
+							"value": "@variables('Name')",
+							"type": "Expression"
+						},
+						"d_para": {
+							"value": "@pipeline().parameters.p_name",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabrickslink",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "2ndNotebook",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "initnb",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/manjunadh2509@gmail.com/practice/ADF/secondnb"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabrickslink",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"p_name": {
+				"type": "string",
+				"defaultValue": "\"\""
+			}
+		},
+		"variables": {
+			"Name": {
+				"type": "String",
+				"defaultValue": "max"
+			}
+		},
+		"folder": {
+			"name": "Databricks"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-03-28T15:17:35Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

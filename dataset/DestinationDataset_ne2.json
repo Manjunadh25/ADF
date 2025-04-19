@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_ne2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "circuits"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

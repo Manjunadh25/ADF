@@ -1,0 +1,11 @@
+{
+	"name": "dbpraticelink",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://dbpratice.dfs.core.windows.net/"
+		}
+	}
+}
