@@ -6,11 +6,13 @@
 				"name": "Wait1",
 				"type": "Wait",
 				"dependsOn": [],
+				"userProperties": [],
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
 			}
 		],
-		"annotations": []
+		"annotations": [],
+		"lastPublishTime": "2025-04-19T13:29:54Z"
 	}
 }
